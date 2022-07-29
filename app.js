@@ -20,7 +20,7 @@ const app = express();
 const port = process.env.PORT || 3000;
  
 app.use(express.static("public"));
-app.use(favicon("public/favicon.ico"));
+app.use(favicon("favicon.ico"));
 app.use(express.static(("views")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
