@@ -1,0 +1,56 @@
+
+body, html {
+  background-color: #E8ECEF;
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #180A0A;
+}
+
+.card {
+  left: 25%;
+  top: 25%;
+  box-shadow: 0 5px 10px 0;
+}
+
+.sign-head {
+  margin: 3% 0%;
+}
+
+.btn-outline-dark:hover {
+  color: #fff!important;
+}
+
+.btn-login {
+  margin: 50px 0px 0px 0px;
+}
+
+.btn-register {
+  margin: 50px 0px 0px 0px;
+}
+
+.btn-danger {
+  margin: 10px 0px;
+}
+
+#togglePassView {
+  width: 3%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: white;
+  cursor: pointer;
+
+}

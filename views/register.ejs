@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+<div class="container mt-0">
+  
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <h1 class="sign-head">Register</h1>
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-dark btn-register col-lg-12">Register</button>
+            <a class="btn btn-danger col-lg-12" href="/auth/google" role="button"><i class="bi bi-google"></i> Sign Up with Google </a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+ 
+    <!--    
+      <div class="col-lg-4">
+      <div class="card-google">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>
+
+<%- include('partials/header') %>
