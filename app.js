@@ -11,13 +11,12 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
-const favicon = require("serve-favicon");
-const path = require('path');
+
 
 
  
 const app = express();
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 
 const port = process.env.PORT || 3000;
  
