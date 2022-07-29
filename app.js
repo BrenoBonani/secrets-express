@@ -11,6 +11,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const favicon = require("serve-favicon");
 
 
  
@@ -19,6 +20,7 @@ const app = express();
 const port = process.env.PORT || 3000;
  
 app.use(express.static("public"));
+app.use(favicon("public/favicon.ico"));
 app.use(express.static(("views")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
