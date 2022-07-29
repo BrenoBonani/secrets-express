@@ -35,7 +35,7 @@ app.use(Flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://BrenoBonani:963852@cluster0.5qaql.mongodb.net/userDB");
+mongoose.connect(process.env.MONGO_URI);
 
 
 // New User Schema
