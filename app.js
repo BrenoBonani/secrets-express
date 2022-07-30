@@ -37,7 +37,7 @@ app.use(Flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect("process.env.MONGO_URI");
 
 
 // New User Schema
