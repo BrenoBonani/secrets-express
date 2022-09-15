@@ -311,7 +311,7 @@ Além disso, eu adiciono as condicionais. O primeiro if, passa se que tiver um e
 que se o foundUser.password for igual ao password digitado, então ele vai me deixar ver a page secrets (res.render).
 
 Agora que eu consigo criar uma conta e acessa ela, eu preciso deixar os dados no meu banco de dados mais seguro. Para isso, eu vou começar usando uma criptografia básica, com o
-mongoose-encrypttion. Eu instalo ele com "npm i mongoose-encryption". Depois, eu uso const encrypt = require ("mongoose-encryption") e eu preciso modificar o meu Schema criado. 
+mongoose-encryption. Eu instalo ele com "npm i mongoose-encryption". Depois, eu uso const encrypt = require ("mongoose-encryption") e eu preciso modificar o meu Schema criado. 
 
 Agora o Schema criado vai ter const userSchema = new mongoose.Schema. Eu preciso usar esse new mongoose.Schema para modificar ele e embaixo, adicionar:
 
