@@ -1,43 +1,16 @@
  
 require("dotenv").config();
-
-const express = require("express");
-const bodyParser = require("body-parser");
-const ejs = require("ejs");
-const mongoose = require("mongoose");
-const session = require("express-session");
-const Flash = require("connect-flash");
+const app = require("./config/server");
+const mongoose = require("./config/mongoose");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 
-
-
+const port = process.env.PORT || 3002;
  
-const app = express();
-
-
-const port = process.env.PORT || 3000;
- 
-app.use(express.static("public"));
-app.use(express.static(("views")));
-app.use(bodyParser.urlencoded({extended: true}));
-app.set("view engine", "ejs");
-
-
-app.use(session({
-  secret: "Our little secret.",
-  resave: false,
-  saveUninitialized: true,
-  cookie: {}
-}));
-
-app.use(Flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-mongoose.connect(process.env.MONGO_URI);
 
 
 // New User Schema
@@ -208,8 +181,6 @@ app.get("/logout", (req, res) => {
 });
 
 
-
-
 // POST REQUEST FOR REGISTRATE
 
 app.post("/register", (req, res) => {
@@ -311,7 +282,7 @@ Além disso, eu adiciono as condicionais. O primeiro if, passa se que tiver um e
 que se o foundUser.password for igual ao password digitado, então ele vai me deixar ver a page secrets (res.render).
 
 Agora que eu consigo criar uma conta e acessa ela, eu preciso deixar os dados no meu banco de dados mais seguro. Para isso, eu vou começar usando uma criptografia básica, com o
-mongoose-encryion. Eu instalo ele com "npm i mongoose-encryption". Depois, eu uso const encrypt = require ("mongoose-encryption") e eu preciso modificar o meu Schema criado. 
+mongoose-encryption. Eu instalo ele com "npm i mongoose-encryption". Depois, eu uso const encrypt = require ("mongoose-encryption") e eu preciso modificar o meu Schema criado. 
 
 Agora o Schema criado vai ter const userSchema = new mongoose.Schema. Eu preciso usar esse new mongoose.Schema para modificar ele e embaixo, adicionar:
 
